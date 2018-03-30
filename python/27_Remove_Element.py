@@ -1,12 +1,16 @@
-class Solution:
-	# @param	A	   a list of integers
-	# @param	elem	an integer, value need to be removed
-	# @return an integer
-	# clrs qsort
-	def removeElement(self, A, elem):
-		j = len(A)-1
-		for i in range(len(A) - 1, -1, -1):
-			if A[i] == elem:
-				A[i], A[j] = A[j], A[i]
-				j -= 1
-		return j+1
+#!/usr/bin/env python
+# coding=utf-8
+
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        index = 0
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[index] = nums[i]
+                index = index + 1
+        return index
